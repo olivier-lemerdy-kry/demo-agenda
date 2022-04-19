@@ -33,7 +33,7 @@ class EventResponseJsonTest {
   @Test
   void deserialize() throws IOException {
     var response = jacksonTester.readObject("EventResponse.json");
-
+    
     assertThat(response.title()).isEqualTo("Spring Boot Handson");
     assertThat(response.start()).isEqualTo(LocalDate.of(2001, Month.JANUARY, 1).atTime(LocalTime.NOON));
   }
