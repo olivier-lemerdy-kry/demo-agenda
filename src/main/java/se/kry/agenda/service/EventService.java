@@ -28,7 +28,7 @@ public class EventService {
   }
 
   private EventResponse responseFromEvent(Event event) {
-    return new EventResponse(event.getTitle(), event.getStart(), event.getEnd());
+    return new EventResponse(event.getId(), event.getTitle(), event.getStart(), event.getEnd());
   }
 
   private Event eventFromRequest(EventCreationRequest request) {

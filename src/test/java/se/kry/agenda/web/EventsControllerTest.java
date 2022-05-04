@@ -35,14 +35,16 @@ class EventsControllerTest {
 
   @Test
   void read_events() throws Exception {
+    var id1 = UUID.fromString("2645c3c5-7dc4-417c-b160-0d6f01a1598b");
     var start1 = LocalDate.of(2001, Month.JANUARY, 1).atTime(LocalTime.NOON);
     var end1 = start1.plusHours(1);
+    var id2 = UUID.fromString("e3716c91-937e-4be4-91ca-d01e8945e390");
     var start2 = start1.plusDays(1);
     var end2 = start2.plusHours(1);
 
     var events = List.of(
-        new EventResponse("Event 1", start1, end1),
-        new EventResponse("Event 2", start2, end2)
+        new EventResponse(id1, "Event 1", start1, end1),
+        new EventResponse(id2, "Event 2", start2, end2)
     );
 
     var pageable = PageRequest.ofSize(20);
